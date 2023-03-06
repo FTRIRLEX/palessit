@@ -1,3 +1,10 @@
+# Project info
+## Design
+https://www.figma.com/file/j1HN7SG0MVwCgFdId6O8nR/Sign-up-page---Guardian-lizard-(Community)?node-id=217%3A2&t=dd7S7Cln0uJ6FTEw-0
+
+## Author
+Egor Moroz
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
