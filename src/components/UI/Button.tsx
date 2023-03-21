@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled, { CSSProperties } from 'styled-components'
 import { FC } from 'react'
 
 interface ButtonProps {
   onClick?: () => void,
   text: string,
-  style?: object
+  style?: CSSProperties
 }
 
 const Button: FC<ButtonProps> = ({ text, style, ...props } : ButtonProps) => {

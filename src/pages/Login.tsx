@@ -1,43 +1,44 @@
 import {FC} from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import Button from '../UI/Button'
-import Input from '../UI/Input'
+import Button from '../components/UI/Button'
+import Input from '../components/UI/Input'
+import colors from '../constants/colors'
 
 const Login: FC = () => {
   const navigate = useNavigate()
   return (
       <LoginWrapper>
-        <StyledContainer>
-          <ImgContainer/>
-          <BorderText>
+        <Container style={{marginRight: '20px'}}>
+          <Image src={require('../assets/img/kawaii.png')}/>
+          <BorderedText>
             Login to your account and be a member of our community. You can be informed of our latest events and contests and use our discounts to participate.
-          </BorderText>
-        </StyledContainer>
-        <StyledContainer>
+          </BorderedText>
+        </Container>
+        <Container style={{marginLeft: '20px'}}>
           <Title>
             Wellcome Back
           </Title>
-          <StyledText>
+          <Text>
             Enter your email address and password below to login to your account.
-          </StyledText>
+          </Text>
           <Input type='Email Adres' placeholder='email'/>
           <Input type='Password' placeholder='password'/>
-          <Button text='Login' style={{color:'white', backgroundColor:'purple', marginBottom: '15px'}}/>
-          <StyledText style={{color: 'spacegray', marginBottom: '15px'}}>
+          <Button text='Login' style={{color: colors.white, backgroundColor: colors.purple, marginBottom: '15px'}}/>
+          <Text style={{color: colors.spacegray, marginBottom: '15px'}}>
             Or
-          </StyledText>
-          <Button text='Login With Gmail' style={{color:'purple'}}/>
-          <Button text='Login With Apple' style={{color:'purple'}}/>
-          <BtnGroup>
+          </Text>
+          <Button text='Login With Gmail' style={{color: colors.purple}}/>
+          <Button text='Login With Apple' style={{color: colors.purple}}/>
+          <ButtonContainer>
             <Button 
             onClick={() => {
               navigate('/registration')
             }} 
-            text='Create Account' style={{color:'white', backgroundColor:'purple', width: '45%', fontSize: '12px'}}/>
-            <Button text='Forgot Password' style={{color:'purple', width: '45%', fontSize: '12px'}}/>
-          </BtnGroup>
-        </StyledContainer>
+            text='Create Account' style={{color: colors.white, backgroundColor: colors.purple, width: '45%', fontSize: '12px'}}/>
+            <Button text='Forgot Password' style={{color: colors.purple, width: '45%', fontSize: '12px'}}/>
+          </ButtonContainer>
+        </Container>
       </LoginWrapper>
   )
 }
@@ -48,11 +49,11 @@ const LoginWrapper = styled.div`
   height: 100vh;
   width: 100%;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 `
-const StyledContainer = styled.div`
+const Container = styled.div`
   display: flex;
-  background-color: #EEDC82;
+  background-color: ${colors.yellow};
   width: 40%;
   height: 90vh;
   border-radius: 25px;
@@ -62,32 +63,29 @@ const StyledContainer = styled.div`
   justify-content: center;
   text-align: center;
 `
-const ImgContainer = styled.div`
+const Image = styled.img`
   display: flex;
-  width: 100%;
+  width: auto;
   height: 60%;
-  background-image: url('../img/yuno.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto 100%;
 `
 
-const BorderText = styled.div`
+const Text = styled.div`
   display: flex;
+  text-align: center;
+  margin-bottom: 30px;
+  width: 400px;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+`
+
+const BorderedText = styled(Text)`
   width: 80%;
   height: 20%;
   border-left: 5px purple solid;
   border-right: 5px purple solid;
-  font-size: 20px;
-  align-items: center;
-  text-align: center;
   padding: 30px;
-`
-
-const StyledText = styled.div`
-  display: flex;
-  text-align: center;
-  margin-bottom: 30px;
+  flex-direction: column;
 `
 
 const Title = styled.div`
@@ -96,7 +94,7 @@ const Title = styled.div`
   font-size: 35px;
   margin-bottom: 30px;
 `
-const BtnGroup = styled.div`
+const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 300px;

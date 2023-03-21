@@ -1,10 +1,10 @@
 import {FC} from 'react'
-import styled from 'styled-components'
+import styled, { CSSProperties } from 'styled-components'
 
 interface InputProps {
   type?: string,
   placeholder?: string,
-  style?: object
+  style?: CSSProperties
 }
 
 const Input: FC<InputProps> = ({type, style, ...props} : InputProps) => {
@@ -24,6 +24,7 @@ const LoginInput = styled.input`
   text-align: left;
   padding-left: 10px;
   margin-bottom: 30px;
+  text-indent: 7px;
 `
 
 export default Input

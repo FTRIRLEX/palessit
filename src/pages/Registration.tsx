@@ -1,41 +1,42 @@
 import {FC} from 'react'
 import styled from 'styled-components'
-import Input from '../UI/Input'
-import Button from '../UI/Button'
+import Input from '../components/UI/Input'
+import Button from '../components/UI/Button'
 import { useNavigate } from 'react-router-dom'
+import colors from '../constants/colors'
 
 const Registration: FC = () => {
   const navigate = useNavigate()
   return (
     <RegistrationWrapper>
-      <StyledContainer>
-        <ImgContainer/>
-        <BorderText>
+      <Container style={{marginRight: '20px'}}>
+      <Image src={require('../assets/img/yuno.png')}/>
+        <BorderedText>
           We welcome your arrival. You can use the special discounts for the first ones after joining.
           <Button 
           onClick={() => {
             navigate('/login')
           }} 
-          text='Back To Login' style={{width:'auto', marginTop: '20px', color:'white', backgroundColor:'purple'}}/>
-        </BorderText>
-      </StyledContainer>
-      <StyledContainer>
+          text='Back To Login' style={{width:'auto', marginTop: '20px', color: colors.white, backgroundColor:'purple'}}/>
+        </BorderedText>
+      </Container>
+      <Container style={{marginLeft: '20px'}}>
         <Title>
           Create Account
         </Title>
-        <StyledText>
+        <Text>
           Enter your email address, password and Workfield below to sign up.
-        </StyledText>
+        </Text>
         <StyledLabel>Enter Your Email:</StyledLabel>
         <Input type='email' placeholder='Email Adress'/>
         <StyledLabel>Work or Study Field:</StyledLabel>
         <Input type='field' placeholder='Field'/>
         <StyledLabel>Enter Your Password:</StyledLabel>
         <Input type='password' placeholder='Password'/>
-        <Button text='Login' style={{color:'white', backgroundColor:'purple'}}/>
-        <Button text='Login With Gmail' style={{color:'purple'}}/>
-        <Button text='Login With Apple' style={{color:'purple'}}/>
-      </StyledContainer>
+        <Button text='Login' style={{color: colors.white, backgroundColor: colors.purple}}/>
+        <Button text='Login With Gmail' style={{color: colors.purple}}/>
+        <Button text='Login With Apple' style={{color: colors.purple}}/>
+      </Container>
     </RegistrationWrapper>
   )
 }
@@ -46,11 +47,11 @@ const RegistrationWrapper = styled.div`
   height: 100vh;
   width: 100%;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 `
-const StyledContainer = styled.div`
+const Container = styled.div`
   display: flex;
-  background-color: #EEDC82;
+  background-color: ${colors.yellow};
   width: 40%;
   height: 90vh;
   border-radius: 25px;
@@ -70,32 +71,30 @@ const Title = styled.div`
   font-size: 35px;
   margin-bottom: 30px;
 `
-const StyledText = styled.div`
+
+const Image = styled.img`
+  display: flex;
+  width: auto;
+  height: 60%;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+`
+const Text = styled.div`
   display: flex;
   text-align: center;
   margin-bottom: 30px;
   width: 400px;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
 `
 
-const ImgContainer = styled.div`
-  display: flex;
-  width: 100%;
-  height: 60%;
-  background-image: url('../img/kawaii.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto 100%;
-`
-
-const BorderText = styled.div`
-  display: flex;
+const BorderedText = styled(Text)`
   width: 80%;
   height: 20%;
   border-left: 5px purple solid;
   border-right: 5px purple solid;
-  font-size: 20px;
-  align-items: center;
-  text-align: center;
   padding: 30px;
   flex-direction: column;
 `
