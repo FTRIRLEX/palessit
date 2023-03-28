@@ -10,7 +10,7 @@ const Registration: FC = () => {
   return (
     <RegistrationWrapper>
       <Container style={{marginRight: '20px'}}>
-      <Image src={require('../assets/img/yuno.png')}/>
+      <Image src={require('../assets/img/registerImage.png')}/>
         <BorderedText>
           We welcome your arrival. You can use the special discounts for the first ones after joining.
           <Button 
@@ -25,17 +25,17 @@ const Registration: FC = () => {
           Create Account
         </Title>
         <Text>
-          Enter your email address, password and Workfield below to sign up.
+          Enter your email address, password and workplace below to sign up.
         </Text>
         <StyledLabel>Enter Your Email:</StyledLabel>
-        <Input type='email' placeholder='Email Adress'/>
+        <Input icon='mail4' type='email' placeholder='Email Address'/>
         <StyledLabel>Work or Study Field:</StyledLabel>
-        <Input type='field' placeholder='Field'/>
+        <Input icon='user-tie' type='field' placeholder='Field'/>
         <StyledLabel>Enter Your Password:</StyledLabel>
-        <Input type='password' placeholder='Password'/>
+        <Input icon='key' type='password' placeholder='Password'/>
         <Button text='Login' style={{color: colors.white, backgroundColor: colors.purple}}/>
-        <Button text='Login With Gmail' style={{color: colors.purple}}/>
-        <Button text='Login With Apple' style={{color: colors.purple}}/>
+        <Button icon='google' text='Sign Up With Gmail' style={{color: colors.purple}}/>
+        <Button icon='appleinc' text='Sign Up With Apple' style={{color: colors.purple}}/>
       </Container>
     </RegistrationWrapper>
   )
@@ -63,7 +63,9 @@ const Container = styled.div`
 
 const StyledLabel = styled.label`
   width: 300px;
-  font-size: 20px;
+  font-size: 18px;
+  padding-left: 10px;
+  padding-bottom: 5px;
 `
 const Title = styled.div`
   display: flex;

@@ -10,33 +10,35 @@ const Login: FC = () => {
   return (
       <LoginWrapper>
         <Container style={{marginRight: '20px'}}>
-          <Image src={require('../assets/img/kawaii.png')}/>
+          <Image src={require('../assets/img/loginImage.png')}/>
           <BorderedText>
             Login to your account and be a member of our community. You can be informed of our latest events and contests and use our discounts to participate.
           </BorderedText>
         </Container>
         <Container style={{marginLeft: '20px'}}>
           <Title>
-            Wellcome Back
+            Welcome Back
           </Title>
           <Text>
             Enter your email address and password below to login to your account.
           </Text>
-          <Input type='Email Adres' placeholder='email'/>
-          <Input type='Password' placeholder='password'/>
+          <Input icon='mail4' type='Email Address' placeholder='email'/>
+          <Input icon='key' type='Password' placeholder='password'/>
           <Button text='Login' style={{color: colors.white, backgroundColor: colors.purple, marginBottom: '15px'}}/>
-          <Text style={{color: colors.spacegray, marginBottom: '15px'}}>
-            Or
+          <Text style={{color: colors.spaceGray, marginBottom: '15px'}}>
+            <hr style={{width: '30%', marginRight: '10px'}}/>
+            or
+            <hr style={{width: '30%', marginLeft: '10px'}}/>
           </Text>
-          <Button text='Login With Gmail' style={{color: colors.purple}}/>
-          <Button text='Login With Apple' style={{color: colors.purple}}/>
+          <Button icon='google' text='Login With Gmail' style={{color: colors.purple}}/>
+          <Button icon='appleinc' text='Login With Apple' style={{color: colors.purple}}/>
           <ButtonContainer>
             <Button 
             onClick={() => {
               navigate('/registration')
             }} 
             text='Create Account' style={{color: colors.white, backgroundColor: colors.purple, width: '45%', fontSize: '12px'}}/>
-            <Button text='Forgot Password' style={{color: colors.purple, width: '45%', fontSize: '12px'}}/>
+            <Button text='Forgot Password' style={{color: colors.purple, width: '45%', fontSize: '12px', border: 'none'}}/>
           </ButtonContainer>
         </Container>
       </LoginWrapper>
