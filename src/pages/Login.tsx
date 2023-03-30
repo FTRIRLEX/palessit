@@ -24,7 +24,7 @@ const Login: FC = () => {
           </Text>
           <Input icon='mail4' type='Email Address' placeholder='email'/>
           <Input icon='key' type='Password' placeholder='password'/>
-          <Button text='Login' style={{color: colors.white, backgroundColor: colors.purple, marginBottom: '15px'}}/>
+          <Button text='Login' style={{color: colors.white, backgroundColor: colors.purple, marginBottom: '15px'}}  onClick={() => navigate('/profile')}/>
           <Text style={{color: colors.spaceGray, marginBottom: '15px'}}>
             <hr style={{width: '30%', marginRight: '10px'}}/>
             or

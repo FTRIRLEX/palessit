@@ -33,7 +33,7 @@ const Registration: FC = () => {
         <Input icon='user-tie' type='field' placeholder='Field'/>
         <StyledLabel>Enter Your Password:</StyledLabel>
         <Input icon='key' type='password' placeholder='Password'/>
-        <Button text='Login' style={{color: colors.white, backgroundColor: colors.purple}}/>
+        <Button text='Login' style={{color: colors.white, backgroundColor: colors.purple}} onClick={() => navigate('/profile')}/>
         <Button icon='google' text='Sign Up With Gmail' style={{color: colors.purple}}/>
         <Button icon='appleinc' text='Sign Up With Apple' style={{color: colors.purple}}/>
       </Container>
