@@ -5,7 +5,8 @@ const colors = {
   spaceGray: '#808080',
   black: '#000',
   orange: '#FF4C00',
-  blue: '#0a1e78'
+  blue: '#0a1e78',
+  opacityWhite: 'rgba(255,255,255, 0.3)'
 }
 
 export default colors

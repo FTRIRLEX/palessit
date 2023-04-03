@@ -61,5 +61,4 @@ const RecordWrapper = styled.div`
   align-items: center;
   border-radius: 10px;
 `
-
 export default Records

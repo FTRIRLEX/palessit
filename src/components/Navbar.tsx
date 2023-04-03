@@ -8,7 +8,7 @@ const Navbar: FC = () => {
       <Logo src={require('../assets/img/logo.png')} />
       <LinksContainer>
         <Item>
-          <Links href='#'>Home</Links>
+          <Links href='/home'>Home</Links>
         </Item>
         <Item>
           <Links href='#'>News</Links>
@@ -17,7 +17,7 @@ const Navbar: FC = () => {
           <Links href='#'>Doctors</Links>
         </Item>
         <Item>
-          <Links href='#'>Profile</Links>
+          <Links href='/profile'>Profile</Links>
         </Item>
       </LinksContainer>
     </Header>
