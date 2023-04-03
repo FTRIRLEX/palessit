@@ -1,19 +1,24 @@
-import {FC, CSSProperties, HTMLAttributes} from 'react'
+import { FC, CSSProperties, HTMLAttributes } from 'react'
 import styled from 'styled-components'
 import colors from '../../constants/colors'
 import Icon from './Icon'
 
 interface InputProps {
-  type?: string,
-  style?: CSSProperties,
+  type?: string
+  style?: CSSProperties
   icon?: string
 }
 
-const Input: FC<InputProps & HTMLAttributes<HTMLDivElement>> = ({ icon, type, style, ...props}) => {
+const Input: FC<InputProps & HTMLAttributes<HTMLInputElement>> = ({
+  icon,
+  type,
+  style,
+  ...props
+}) => {
   return (
     <LoginInput style={style} {...props}>
-    {!!icon && <Icon icon={icon} style={{marginRight: '10px'}}/>}
-    <StyledInput type={type} placeholder={props.placeholder}/>
+      {!!icon && <Icon icon={icon} style={{ marginRight: '10px' }} />}
+      <StyledInput type={type} placeholder={props.placeholder} />
     </LoginInput>
   )
 }
@@ -36,7 +41,7 @@ const LoginInput = styled.div`
     border-color: ${colors.black};
   }
 `
-const StyledInput= styled.input`
+const StyledInput = styled.input`
   border: none;
   outline: none;
   background: transparent;

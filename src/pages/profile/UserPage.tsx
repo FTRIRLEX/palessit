@@ -4,6 +4,9 @@ import Tabs from '../../components/Tabs'
 import Navbar from '../../components/Navbar'
 import { Route, Routes, Navigate } from 'react-router-dom'
 import ProfileInfo from './ProfileInfo'
+import Records from './Records'
+import Support from './Support'
+import Payment from './Payment'
 
 const UserPage: FC = () => {
   return (
@@ -21,6 +24,9 @@ const UserPage: FC = () => {
                 element={<Navigate to='/profile/info' replace={false} />}
               />
               <Route path='/info' element={<ProfileInfo />} />
+              <Route path='/records' element={<Records />} />
+              <Route path='/support' element={<Support />} />
+              <Route path='/payment' element={<Payment />} />
             </Routes>
           </Content>
         </Container>

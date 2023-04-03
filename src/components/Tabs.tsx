@@ -16,12 +16,10 @@ const Tabs: FC = () => {
   }
 
   const items: Item[] = [
-    { icon: 'bell', name: 'Уведомления', link: '/profile/notification' },
-    { icon: 'key', name: 'Информация для входа', link: '/profile/authinfo' },
     { icon: 'user', name: 'Обо мне', link: '/profile/info' },
-    { icon: 'history', name: 'История операций', link: '/profile/history' },
+    { icon: 'history', name: 'Записи', link: '/profile/records' },
     { icon: 'credit-card', name: 'Способы оплаты', link: '/profile/payment' },
-    { icon: 'info', name: 'Служба поддержки', link: '/profile/help' },
+    { icon: 'info', name: 'Служба поддержки', link: '/profile/support' },
     { icon: 'exit', name: 'Выход', link: '/login' },
   ]
 

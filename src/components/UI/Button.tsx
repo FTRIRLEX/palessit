@@ -4,15 +4,26 @@ import colors from '../../constants/colors'
 import Icon from './Icon'
 
 interface ButtonProps {
-  icon?: string,
-  text: string,
+  icon?: string
+  text?: string
   style?: CSSProperties
 }
 
-const Button: FC<ButtonProps & HTMLAttributes<HTMLButtonElement>> = ({ icon, text, style, ...props }) => {
+const Button: FC<ButtonProps & HTMLAttributes<HTMLButtonElement>> = ({
+  icon,
+  text,
+  style,
+  ...props
+}) => {
   return (
     <StyledButton style={style} {...props}>
-      {!!icon && <Icon icon={icon} style={{marginRight: '10px'}} color={style?.color}/>}
+      {!!icon && (
+        <Icon
+          icon={icon}
+          style={{ marginRight: '10px' }}
+          color={style?.color}
+        />
+      )}
       {text}
     </StyledButton>
   )
@@ -29,7 +40,7 @@ const StyledButton = styled.button`
   height: 30px;
   width: 300px;
   border-radius: 13px;
-  border: 2px solid ${colors.purple} ;
+  border: 2px solid ${colors.purple};
   font-size: 18px;
   text-align: center;
   margin-bottom: 30px;
@@ -39,4 +50,3 @@ const StyledButton = styled.button`
 `
 
 export default Button
-
