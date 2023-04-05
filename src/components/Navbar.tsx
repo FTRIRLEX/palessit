@@ -11,9 +11,6 @@ const Navbar: FC = () => {
           <Links href='/home'>Home</Links>
         </Item>
         <Item>
-          <Links href='#'>News</Links>
-        </Item>
-        <Item>
           <Links href='#'>Doctors</Links>
         </Item>
         <Item>

@@ -10,3 +10,22 @@
   font-weight: bold;
   margin: 0;
 }
+
+@font-face {
+  font-family: 'Inter Bold';
+  src: url("./fonts/Inter-Bold.ttf")format("trueType");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Inter Regular';
+  src: url("./fonts/Inter-Regular.ttf")format('trueTyp');
+  font-weight: 400;
+}
+
+
+@font-face {
+  font-family: 'Inter Medium';
+  src: url("./fonts/Inter-Medium.ttf")format("trueType");
+  font-weight: 500;
+}
