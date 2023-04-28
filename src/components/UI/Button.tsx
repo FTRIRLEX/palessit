@@ -1,22 +1,29 @@
-import styled from 'styled-components'
-import { FC, CSSProperties, HTMLAttributes } from 'react'
-import colors from '../../constants/colors'
-import Icon from './Icon'
+import styled from 'styled-components';
+import { FC, CSSProperties, HTMLAttributes } from 'react';
+import colors from '../../constants/colors';
+import Icon from './Icon';
 
 interface ButtonProps {
-  icon?: string,
-  text: string,
-  style?: CSSProperties
+  icon?: string;
+  text?: string;
+  style?: CSSProperties;
+  iconStyle?: CSSProperties;
 }
 
-const Button: FC<ButtonProps & HTMLAttributes<HTMLButtonElement>> = ({ icon, text, style, ...props }) => {
+const Button: FC<ButtonProps & HTMLAttributes<HTMLButtonElement>> = ({
+  icon,
+  text,
+  style,
+  iconStyle,
+  ...props
+}) => {
   return (
     <StyledButton style={style} {...props}>
-      {!!icon && <Icon icon={icon} style={{marginRight: '10px'}} color={style?.color}/>}
+      {!!icon && <Icon icon={icon} style={iconStyle} color={style?.color} />}
       {text}
     </StyledButton>
-  )
-}
+  );
+};
 
 const StyledButton = styled.button`
   display: flex;
@@ -29,14 +36,16 @@ const StyledButton = styled.button`
   height: 30px;
   width: 300px;
   border-radius: 13px;
-  border: 2px solid ${colors.purple} ;
+  border: 2px solid ${colors.purple};
   font-size: 18px;
   text-align: center;
   margin-bottom: 30px;
   &:hover {
     cursor: pointer;
   }
-`
+  &:active {
+    border: 2px solid ${colors.blue};
+  }
+`;
 
-export default Button
-
+export default Button;

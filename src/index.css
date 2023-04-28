@@ -10,3 +10,28 @@
   font-weight: bold;
   margin: 0;
 }
+
+@font-face {
+  font-family: 'Inter Bold';
+  src: url("./fonts/Inter-Bold.ttf")format("trueType");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Inter Medium';
+  src: url("./fonts/Inter-Medium.ttf")format("trueType");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Popins';
+  src: url("./fonts/Poppins-Black.ttf")format("trueType");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Ubuntu Regular';
+  src: url("./fonts/Ubuntu-Regular.ttf")format("trueType");
+  font-weight: 400;
+}
+
