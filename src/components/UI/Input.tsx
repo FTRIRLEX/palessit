@@ -1,27 +1,39 @@
-import { FC, CSSProperties, HTMLAttributes } from 'react'
-import styled from 'styled-components'
-import colors from '../../constants/colors'
-import Icon from './Icon'
+import { FC, CSSProperties } from 'react';
+import styled from 'styled-components';
+import colors from '../../constants/colors';
+import Icon from './Icon';
 
 interface InputProps {
-  type?: string
-  style?: CSSProperties
-  icon?: string
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  type?: string;
+  style?: CSSProperties;
+  iconStyle?: CSSProperties;
+  icon?: string;
+  placeholder?: string;
 }
 
-const Input: FC<InputProps & HTMLAttributes<HTMLInputElement>> = ({
+const Input: FC<InputProps> = ({
   icon,
   type,
   style,
-  ...props
+  iconStyle,
+  value,
+  onChange,
+  placeholder,
 }) => {
   return (
-    <LoginInput style={style} {...props}>
-      {!!icon && <Icon icon={icon} style={{ marginRight: '10px' }} />}
-      <StyledInput type={type} placeholder={props.placeholder} />
+    <LoginInput style={style}>
+      {!!icon && <Icon icon={icon} style={iconStyle} />}
+      <StyledInput
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+      />
     </LoginInput>
-  )
-}
+  );
+};
 
 const LoginInput = styled.div`
   display: flex;
@@ -40,12 +52,12 @@ const LoginInput = styled.div`
     cursor: pointer;
     border-color: ${colors.black};
   }
-`
+`;
 const StyledInput = styled.input`
   border: none;
   outline: none;
   background: transparent;
   width: 100%;
-`
+`;
 
-export default Input
+export default Input;

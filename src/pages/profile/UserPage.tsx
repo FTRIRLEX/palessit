@@ -4,7 +4,7 @@ import Tabs from '../../components/Tabs'
 import Navbar from '../../components/Navbar'
 import { Route, Routes, Navigate } from 'react-router-dom'
 import ProfileInfo from './ProfileInfo'
-import Records from './Records'
+import Appointments from './Appointments'
 import Support from './Support'
 import Payment from './Payment'
 
@@ -24,7 +24,7 @@ const UserPage: FC = () => {
                 element={<Navigate to='/profile/info' replace={false} />}
               />
               <Route path='/info' element={<ProfileInfo />} />
-              <Route path='/records' element={<Records />} />
+              <Route path='/appointments' element={<Appointments />} />
               <Route path='/support' element={<Support />} />
               <Route path='/payment' element={<Payment />} />
             </Routes>
@@ -36,7 +36,6 @@ const UserPage: FC = () => {
 }
 
 const Body = styled.div`
-  //margin-top: 80px;
   display: flex;
   width: 100%;
   height: 100%;
@@ -51,9 +50,6 @@ const Container = styled.div`
   min-height: 100vh;
   justify-content: center;
   align-items: flex-start;
-  @media (max-width: 1280px) {
-    width: 100%;
-  }
 `
 const Menu = styled.div`
   display: flex;

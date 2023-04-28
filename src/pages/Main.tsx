@@ -1,16 +1,16 @@
-import { FC } from 'react'
-import Navbar from '../components/Navbar'
-import Slideshow from '../components/Slider'
-import styled from 'styled-components'
-import colors from '../constants/colors'
-import Icon from '../components/UI/Icon'
+import { FC } from 'react';
+import Navbar from '../components/Navbar';
+import Slideshow from '../components/Slider';
+import styled from 'styled-components';
+import colors from '../constants/colors';
+import Icon from '../components/UI/Icon';
 
 const Main: FC = () => {
   interface Card {
-    id: number
-    title: string
-    description: string
-    icon: string
+    id: number;
+    title: string;
+    description: string;
+    icon: string;
   }
 
   const cards: Card[] = [
@@ -19,23 +19,23 @@ const Main: FC = () => {
       title: 'Взрослое отделение',
       description:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate distinctio consectetur ipsa atque harum iure.',
-      icon: 'pacman',
+      icon: 'aid-kit',
     },
     {
       id: 2,
       title: 'Детское отделение',
       description:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate distinctio consectetur ipsa atque harum iure.',
-      icon: 'pacman',
+      icon: 'heart',
     },
     {
       id: 3,
       title: 'Лабораторная',
       description:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate distinctio consectetur ipsa atque harum iure.',
-      icon: 'pacman',
+      icon: 'accessibility',
     },
-  ]
+  ];
 
   return (
     <>
@@ -58,8 +58,8 @@ const Main: FC = () => {
         </CardWrapper>
       </Content>
     </>
-  )
-}
+  );
+};
 
 const Title = styled.div`
   display: flex;
@@ -67,20 +67,20 @@ const Title = styled.div`
   font-size: 35px;
   margin-bottom: 30px;
   margin-top: 30px;
-`
+`;
 
 const CardTitle = styled(Title)`
   font-size: 22px;
   margin: 0;
   margin-bottom: 15px;
   font-family: 'Inter Medium';
-`
+`;
 
 const CardDescription = styled.div`
   font-size: 18px;
   color: ${colors.spaceGray};
   font-family: 'Inter Medium';
-`
+`;
 
 const Content = styled.div`
   display: flex;
@@ -89,7 +89,7 @@ const Content = styled.div`
   height: auto;
   flex-direction: column;
   align-items: center;
-`
+`;
 
 const Card = styled.div`
   display: flex;
@@ -102,7 +102,7 @@ const Card = styled.div`
     cursor: pointer;
     box-shadow: 0 0 10px ${colors.spaceGray};
   }
-`
+`;
 const CardWrapper = styled.div`
   display: flex;
   width: 80%;
@@ -110,14 +110,14 @@ const CardWrapper = styled.div`
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
-`
+`;
 const IconWrapper = styled.div`
   display: flex;
   width: 30%;
   height: 100%;
   align-items: center;
   justify-content: center;
-`
+`;
 
 const CardInfo = styled.div`
   display: flex;
@@ -126,6 +126,6 @@ const CardInfo = styled.div`
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-`
+`;
 
-export default Main
+export default Main;

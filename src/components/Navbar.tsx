@@ -1,25 +1,40 @@
-import { FC } from 'react'
-import styled from 'styled-components'
-import colors from '../constants/colors'
+import { FC } from 'react';
+import styled from 'styled-components';
+import colors from '../constants/colors';
+//import { useCustomSelector } from '../hooks/store'
+//import { loginUser } from '../store/selectors'
 
 const Navbar: FC = () => {
+  //const { user } = useCustomSelector(loginUser)
+
   return (
     <Header>
-      <Logo src={require('../assets/img/logo.png')} />
+      <Links href='/home'>
+        <Logo src={require('../assets/img/logo.png')} />
+      </Links>
       <LinksContainer>
         <Item>
-          <Links href='/home'>Home</Links>
+          <Links href='/home'>Главная</Links>
         </Item>
         <Item>
-          <Links href='#'>Doctors</Links>
+          <Links href='/users'>Врачи</Links>
         </Item>
+        {/* {user.user.email ? (
+          <Item>
+            <Links href='/profile'>Профиль</Links>
+          </Item>
+        ) : (
+          <Item>
+            <Links href='/login'>Войти</Links>
+          </Item>
+        )} */}
         <Item>
-          <Links href='/profile'>Profile</Links>
+          <Links href='/profile'>Профиль</Links>
         </Item>
       </LinksContainer>
     </Header>
-  )
-}
+  );
+};
 
 const Header = styled.header`
   display: flex;
@@ -28,20 +43,19 @@ const Header = styled.header`
   height: 110px;
   justify-content: space-between;
   align-items: center;
-`
+`;
 const Logo = styled.img`
   display: flex;
   width: 250px;
-  height: auto;
   margin-left: 50px;
-`
+`;
 const LinksContainer = styled.div`
   display: flex;
   margin-right: 50px;
-`
+`;
 
 const Links = styled.a`
-  color: white;
+  color: ${colors.white};
   font-size: 20px;
   padding: 5px 0px;
   margin: 0px 30px;
@@ -51,9 +65,9 @@ const Links = styled.a`
   &:hover {
     color: ${colors.orange};
   }
-`
+`;
 const Item = styled.li`
   list-style-type: none;
-`
+`;
 
-export default Navbar
+export default Navbar;

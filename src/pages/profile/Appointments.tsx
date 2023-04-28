@@ -1,7 +1,8 @@
 import { FC } from 'react'
 import styled from 'styled-components'
+import colors from '../../constants/colors'
 
-const Records: FC = () => {
+const Appointments: FC = () => {
   interface Record {
     id: number
     date: string
@@ -20,7 +21,7 @@ const Records: FC = () => {
     {
       id: 2,
       date: '23.05.2023 15:50',
-      doctor: 'отолоринголог',
+      doctor: 'отоларинголог',
       doctorName: 'Пушкин А.В.',
       status: 'Активна',
     },
@@ -30,14 +31,12 @@ const Records: FC = () => {
       <Title>Записи</Title>
       {Records?.map((record) => (
         <RecordWrapper key={record.id}>
-          <div>
-            <strong>Время: {record.date}</strong>
-            <div>Врач: {record.doctor}</div>
-            <div>Фамилия врача: {record.doctorName}</div>
-          </div>
-          <div>
-            <h3>{record.status}</h3>
-          </div>
+          <Info>
+            <StyledLabel>Время: {record.date}</StyledLabel>
+            <StyledLabel>Врач: {record.doctor}</StyledLabel>
+            <StyledLabel>Фамилия врача: {record.doctorName}</StyledLabel>
+          </Info>
+          <Status>{record.status}</Status>
         </RecordWrapper>
       ))}
     </>
@@ -49,7 +48,23 @@ const Title = styled.div`
   text-align: center;
   font-size: 35px;
   margin-bottom: 30px;
-  font-family: 'Inter Bold';
+  font-family: 'Ubuntu Regular';
+`
+
+const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+const StyledLabel = styled.label`
+  font-size: 18px;
+  padding-bottom: 8px;
+  color: ${colors.black};
+  font-family: 'Ubuntu Regular';
+`
+
+const Status = styled(StyledLabel)`
+  color: ${colors.spaceGray};
 `
 
 const RecordWrapper = styled.div`
@@ -61,4 +76,4 @@ const RecordWrapper = styled.div`
   align-items: center;
   border-radius: 10px;
 `
-export default Records
+export default Appointments

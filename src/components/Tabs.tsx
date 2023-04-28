@@ -17,7 +17,7 @@ const Tabs: FC = () => {
 
   const items: Item[] = [
     { icon: 'user', name: 'Обо мне', link: '/profile/info' },
-    { icon: 'history', name: 'Записи', link: '/profile/records' },
+    { icon: 'history', name: 'Записи', link: '/profile/appointments' },
     { icon: 'credit-card', name: 'Способы оплаты', link: '/profile/payment' },
     { icon: 'info', name: 'Служба поддержки', link: '/profile/support' },
     { icon: 'exit', name: 'Выход', link: '/login' },
@@ -67,7 +67,7 @@ const Title = styled.div`
   text-align: center;
   font-size: 35px;
   margin-bottom: 30px;
-  font-family: 'Inter Bold';
+  font-family: 'Ubuntu Regular';
 `
 
 const Container = styled.div`
@@ -93,11 +93,11 @@ const Item = styled(Link)`
 
 const ItemText = styled(Text)`
   margin-left: 8px;
-  line-height: 19px;
+  line-height: 16px;
   font-size: 18px;
   color: ${colors.spaceGray};
   margin-left: 10px;
-  font-family: 'Inter Medium';
+  font-family: 'Ubuntu Regular';
 `
 
 export default Tabs
